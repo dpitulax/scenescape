@@ -71,11 +71,7 @@
                         },
                         "camera_config": {
                             "cameraid": "camera1",
-                            "intrinsics": [
-                                70
-                            ],
-                            "metadatagenpolicy": "detectionPolicy",
-                            "publish_frame": true
+                            "metadatagenpolicy": "detectionPolicy"
                         }
                     }
                 }
@@ -146,11 +142,7 @@
                         },
                         "camera_config": {
                             "cameraid": "camera2",
-                            "intrinsics": [
-                                70
-                            ],
-                            "metadatagenpolicy": "detectionPolicy",
-                            "publish_frame": true
+                            "metadatagenpolicy": "detectionPolicy"
                         }
                     }
                 }

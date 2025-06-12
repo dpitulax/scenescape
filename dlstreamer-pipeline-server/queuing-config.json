@@ -71,11 +71,7 @@
                         },
                         "camera_config": {
                             "cameraid": "atag-qcam1",
-                            "intrinsics": [
-                                70
-                            ],
-                            "metadatagenpolicy": "detectionPolicy",
-                            "publish_frame": true
+                            "metadatagenpolicy": "detectionPolicy"
                         }
                     }
                 }
@@ -146,11 +142,7 @@
                         },
                         "camera_config": {
                             "cameraid": "atag-qcam2",
-                            "intrinsics": [
-                                70
-                            ],
-                            "metadatagenpolicy": "detectionPolicy",
-                            "publish_frame": true
+                            "metadatagenpolicy": "detectionPolicy"
                         }
                     }
                 }
