@@ -390,7 +390,7 @@ newlines-check: # NEX-T10511
 object-crud: # NEX-T10429
 	$(call selenium-recipe, $(COMPOSE)/broker.yml:$(COMPOSE)/pgserver.yml:$(COMPOSE)/web.yml, tests/ui/tc_object_crud.py, 'pgserver')
 
-out-of-box: # NEX-T10417
+out-of-box: # NEX-T10417 
 	$(call common-recipe, sample_data/docker-compose-example.yml, tests/ui/tc_out_of_box.py,'pgserver web queuing-video retail-video scene',true,/run/secrets/browser.auth,tests/testdb.tar.bz2,scenescape-interface)
 
 out-of-box-no-ntp: # NEX-T10417

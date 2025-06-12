@@ -69,9 +69,12 @@ class PostDecodeTimestampCapture:
     if self.ntpServer:
       # if ntpServer is available, check if it is time to recalibrate
       if not self.lastTimeSync or now - self.lastTimeSync > 1000 :
-        response = self.ntpClient.request(host=self.ntpServer, port=123)
-        self.timeOffset = response.offset
-        self.lastTimeSync = now
+        try:
+          response = self.ntpClient.request(host=self.ntpServer, port=123)
+          self.timeOffset = response.offset
+          self.lastTimeSync = now
+        except Exception as e:
+          print(f"[WARNING] NTP server '{self.ntpServer}' is unavailable or unreachable: {e}")
 
     now += self.timeOffset
     self.timestamp_for_next_block = now
@@ -79,6 +82,7 @@ class PostDecodeTimestampCapture:
       'postdecode_timestamp': f"{datetime.fromtimestamp(now, tz=timezone(TIMEZONE)).strftime(DATETIME_FORMAT)[:-3]}Z",
       'timestamp_for_next_block': now,
       'fps': self.fps
+      'ntp_status': 'used' if self.timeOffset != 0 else 'unavailable'
     }))
     return True
 
