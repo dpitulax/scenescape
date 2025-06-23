@@ -18,7 +18,7 @@ import time
 import os
 import json
 
-TEST_NAME = "NEX-T10405"
+TEST_NAME = "NEX-T10484"
 MAX_CONTROLLER_WAIT = 30 # seconds
 NUM_MSGS = 100
 
